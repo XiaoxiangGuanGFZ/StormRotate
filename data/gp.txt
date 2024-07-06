@@ -1,0 +1,7 @@
+ROTATE_ANGLE,45
+ROTATE_RADIUS,12000
+ROTATE_CENTER_X,603987
+ROTATE_CENTER_Y,5792746
+
+FP_data,D:/StormRotate/data/
+FP_out,D:/StormRotate/output/
