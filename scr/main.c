@@ -38,10 +38,12 @@ int main(int argc, char * argv[])
         printf("No .asc file detected in %s:\n", p_gp->FP_data);
         exit(0);
     }
-    printf("Detected .asc files in %s:\n", p_gp->FP_data);
-    for (size_t i = 0; i < fileList.count; i++) {
-        printf("%s\n", fileList.filenames[i]);
+    printf("------ Detected .asc files in %s:\n", p_gp->FP_data);
+    for (int i = 0; i < fileList.count && i < 6; i++) {
+        printf("%d %s\n", i + 1, fileList.filenames[i]);
     }
+    if ( fileList.count > 6){printf("...\n");}    
+    printf("*** in total %d files ***\n", fileList.count);
     
     char FP_file[MAXCHAR];
     FP_file[0] = '\0';
@@ -51,7 +53,7 @@ int main(int argc, char * argv[])
      * based on one data file
      * **************************/
     strcat(strcat(FP_file, p_gp->FP_data), fileList.filenames[0]); // the first ASCII raster file 
-    printf("%s\n", FP_file);
+    printf("------ ASCII raster header in %s: \n", FP_file);
 
     ST_Header HD; // the first 6 lines in ASCII raster file
     int *rdata;
@@ -82,13 +84,14 @@ int main(int argc, char * argv[])
     /**************************************
      *     raster rotate: reassign
      * ************************************/
+    printf("------ Ratser rotating:\n");
     int *rdata_out;
     char FP_output[MAXCHAR];
     FP_output[0] = '\0';
 
     for (int i = 0; i < fileList.count; i++)
     {
-        printf("%s: ", fileList.filenames[i]);
+        printf("%4d %s: ", i + 1, fileList.filenames[i]);
         FP_file[0] = '\0'; FP_output[0] = '\0';
         strcat(strcat(FP_file, p_gp->FP_data), fileList.filenames[0]);
         strcat(strcat(FP_output, p_gp->FP_out), fileList.filenames[0]);

@@ -101,7 +101,20 @@ void import_global(
             }
         }
     }
-    fclose(fp);    
+    fclose(fp);  
+    /************************** print the parameters ********************************/  
+    printf("------ Global parameter import completed: \n");
+
+    printf(
+        "FP_data: %s\nFP_out : %s\n",
+        p_gp->FP_data, p_gp->FP_out
+    );
+
+    printf(
+        "ROTATE_ANGLE: %.0f\nROTATE_CENTER_X: %f\nROTATE_CENTER_Y: %f\nROTATE_RADIUS: %.0f\n",
+        p_gp->ROTATE_ANGLE, p_gp->ROTATE_CENTER_X, p_gp->ROTATE_CENTER_Y, p_gp->ROTATE_RADIUS
+    );
+    
 }
 
 void removeLeadingSpaces(char *str)
