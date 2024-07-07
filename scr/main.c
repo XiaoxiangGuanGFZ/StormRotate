@@ -42,7 +42,9 @@ int main(int argc, char * argv[])
     for (int i = 0; i < fileList.count && i < 6; i++) {
         printf("%d %s\n", i + 1, fileList.filenames[i]);
     }
-    if ( fileList.count > 6){printf("...\n");}    
+    if (fileList.count > 6){
+        printf("....\n");
+    }    
     printf("*** in total %d files ***\n", fileList.count);
     
     char FP_file[MAXCHAR];
@@ -93,8 +95,8 @@ int main(int argc, char * argv[])
     {
         printf("%4d %s: ", i + 1, fileList.filenames[i]);
         FP_file[0] = '\0'; FP_output[0] = '\0';
-        strcat(strcat(FP_file, p_gp->FP_data), fileList.filenames[0]);
-        strcat(strcat(FP_output, p_gp->FP_out), fileList.filenames[0]);
+        strcat(strcat(FP_file, p_gp->FP_data), fileList.filenames[i]);
+        strcat(strcat(FP_output, p_gp->FP_out), fileList.filenames[i]);
         if (FP_file[0] != '\0')
         {
             Import_data(FP_file, &rdata, &HD, 0);
