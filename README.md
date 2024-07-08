@@ -53,14 +53,8 @@ FP_out,D:/StormDirection/data/rotate/Angle_190/ # directory to store the rotated
 ```
 
 ```console
-./StormRotate.exe /path/to/gp.txt
+$ ./StormRotate.exe /path/to/gp.txt
 ```
-or
-```console
-./StormRotate /path/to/gp.txt
-```
-
-depending your OS.
 
 
 ## Contact
