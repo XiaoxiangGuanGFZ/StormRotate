@@ -3,6 +3,8 @@
 ## Introduction
 a program designed to rotate a rainfall event (storm) by a certain angle. 
 
+![Rotation illustration](/doc/rotate_illustation.jpg)
+
 ## Algorithm
 
 ### Rotation
@@ -35,9 +37,10 @@ $ cmake ..
 $ make
 ```
 
-A configure file `gp.txt` is required to provide parameters controlling the behavior, example is:
+A configure file `gp.txt` is required to provide parameters controlling the behavior, an example is:
 
 ```
+# field-value pairs, separated by comma
 ROTATE_ANGLE,190            # degrees
 ROTATE_RADIUS,12000         # rotation radius: same unit as RASTER ASCII data
 ROTATE_CENTER_X,603987      # coordinates of the rotation center
