@@ -41,12 +41,14 @@ A configure file `gp.txt` is required to provide parameters controlling the beha
 
 ```
 # field-value pairs, separated by comma
+# only values can be changed
 ROTATE_ANGLE,190            # degrees
 ROTATE_RADIUS,12000         # rotation radius: same unit as RASTER ASCII data
 ROTATE_CENTER_X,603987      # coordinates of the rotation center
 ROTATE_CENTER_Y,5792746
 
 FP_data,D:/StormDirection/data/rr_hly/          # directory where rainstorm ASCII raster data is stored
+# Raster files in FP_data directory should be ASCII, with extension of .asc
 FP_out,D:/StormDirection/data/rotate/Angle_190/ # directory to store the rotated rain storm
 ```
 
